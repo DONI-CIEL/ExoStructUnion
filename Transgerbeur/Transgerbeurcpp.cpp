@@ -7,6 +7,7 @@
 //****************************************************************************************
 
 #include <iostream>
+#include <cstring>
 using namespace std;
 
 
@@ -46,6 +47,8 @@ int main()
 {
 
 	cout << " Programme Transgerbeur " << endl;
+	
+
 	SRouleau ro1 = { 12.5f, 101 };
 
 	SPalette pa1;
@@ -69,6 +72,14 @@ int main()
 	SCasier tabCasiers[9] = {};
 	tabCasiers[0] = c1;
 	tabCasiers[2] = c2;
+
+	cout << "\n--- Tailles en memoire (en octets) ---" << endl;
+	cout << "Taille EEtat                : " << sizeof(etatC1) << " octets" << endl;
+	cout << "Taille SRouleau             : " << sizeof(ro1) << " octets" << endl;
+	cout << "Taille SPalette             : " << sizeof(pa1) << " octets" << endl;
+	cout << "Taille UContenu             : " << sizeof(cont) << " octets" << endl;
+	cout << "Taille SCasier              : " << sizeof(c1) << " octets" << endl;
+	cout << "Taille tabCasiers           : " << sizeof(tabCasiers) << " octets" << endl;
 
 	return 0;
 
