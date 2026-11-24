@@ -46,11 +46,29 @@ int main()
 {
 
 	cout << " Programme Transgerbeur " << endl;
+	SRouleau ro1 = { 12.5f, 101 };
 
-	SPalette palette;
-	SRouleau rouleau;
-	SCasier casier;
-	SCasier tabCasiers[9]; // Le tableau de 9 casiers
+	SPalette pa1;
+	pa1.poids = 500;
+	strcpy_s(pa1.ref, "PAL-2026-A");
+
+	EEtat etatC1 = VIDE;
+
+	UContenu cont;
+	cont.palette = pa1;
+	cont.rouleau = ro1;
+
+	SCasier c1;
+	c1.contenu.palette = pa1;
+	c1.etat = PALETTE;
+	c1.px = 2;
+	c1.py = 3;
+
+	SCasier c2 = { 1, 4, PALETTE, { {320, "PAL-2026-B"} } };
+
+	SCasier tabCasiers[9] = {};
+	tabCasiers[0] = c1;
+	tabCasiers[2] = c2;
 
 	return 0;
 
