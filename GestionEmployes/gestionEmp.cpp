@@ -14,6 +14,4 @@ int main()
 	cout << " Programme Gestion Emp " << endl;
 	
 	
-
-
 }
