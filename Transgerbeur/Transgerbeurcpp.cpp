@@ -49,23 +49,24 @@ int main()
 	cout << " Programme Transgerbeur " << endl;
 	
 
-	SRouleau ro1 = { 12.5f, 101 };
+	SRouleau ro1 = { 10.5, 552 };
 
 	SPalette pa1;
-	pa1.poids = 500;
-	strcpy_s(pa1.ref, "PAL-2026-A");
+	pa1.poids = 101.2;
+	strcpy_s(pa1.ref, "ref1");
 
 	EEtat etatC1 = VIDE;
 
-	UContenu cont;
-	cont.palette = pa1;
+	UContenu cont = { pa1 };
 	cont.rouleau = ro1;
 
 	SCasier c1;
-	c1.contenu.palette = pa1;
-	c1.etat = PALETTE;
+	c1.contenu = cont;
+	c1.etat = ROULEAU;
 	c1.px = 2;
 	c1.py = 3;
+
+	c1.contenu.rouleau.numero = 322;
 
 	SCasier c2 = { 1, 4, PALETTE, { {320, "PAL-2026-B"} } };
 
@@ -73,7 +74,7 @@ int main()
 	tabCasiers[0] = c1;
 	tabCasiers[2] = c2;
 
-	cout << "\n--- Tailles en memoire (en octets) ---" << endl;
+	cout << "\n-------  Tailles en memoire  -------" << endl;
 	cout << "Taille EEtat                : " << sizeof(etatC1) << " octets" << endl;
 	cout << "Taille SRouleau             : " << sizeof(ro1) << " octets" << endl;
 	cout << "Taille SPalette             : " << sizeof(pa1) << " octets" << endl;
